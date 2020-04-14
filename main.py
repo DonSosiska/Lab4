@@ -212,52 +212,65 @@ if cont==1:
     Yall=[y1av1, y2av2, y3av3, y4av4, y5av5, y6av6, y7av7, y8av8]
 
     my = (y1av1 + y2av2 + y3av3 + y4av4 + y5av5 + y6av6 + y7av7 + y8av8)/8
+
     def mni(j):
         s=0
         for i in range(len(Xall[j])):
             s=s+Xall[j][i]
         return s/len(Xall[j])
+
     def mni2(j,k):
         s=0
         for i in range(len(Xall[j])):
             s=s+Xall[j][i]*Xall[k][i]
         return s/len(Xall[j])
+
     def mni3(j,k,l):
         s=0
         for i in range(len(Xall[j])):
             s=s+Xall[j][i]*Xall[k][i]*Xall[l][i]
         return s/len(Xall[j])
+
     def mni4(j1,j2,j3,j4):
         s=0
         for i in range(len(Xall[j1])):
             s=s+Xall[j1][i]*Xall[j2][i]*Xall[j3][i]*Xall[j4][i]
         return s/len(Xall[j1])
+
     def mni5(j1,j2,j3,j4,j5):
         s=0
         for i in range(len(Xall[j1])):
             s=s+Xall[j1][i]*Xall[j2][i]*Xall[j3][i]*Xall[j4][i]*Xall[j5][i]
         return s/len(Xall[j1])
+
     def mni6(j1,j2,j3,j4,j5,j6):
         s=0
         for i in range(len(Xall[j1])):
             s=s+Xall[j1][i]*Xall[j2][i]*Xall[j3][i]*Xall[j4][i]*Xall[j5][i]*Xall[j6][i]
         return s/len(Xall[j1])
+
     Yalls=sum(Yall)/8
+
     def kmn(j):
         s=0
         for i in range(len(Yall)):
             s=s+yav(i)*Xall[j][i]
         return s/len(Yall)
+
     def kmn2(j,k):
         s=0
         for i in range(len(Yall)):
             s=s+yav(i)*Xall[j][i]*Xall[k][i]
         return s/len(Yall)
+
     def kmn3(j,k,l):
         s=0
         for i in range(len(Yall)):
             s=s+yav(i)*Xall[j][i]*Xall[k][i]*Xall[l][i]
         return s/len(Yall)
+
+    #функции mni1...mni6 используются для составления системы восьми уравнений, линейных относительно восьми ннеизвестных b0 , b1 , b2 , b3 , b12 , b13, b3, b123. Методичка 4 лабы, формула (5)
+
     m=[[0,0,0,0,0,0,0,0],
        [0,0,0,0,0,0,0,0],
        [0,0,0,0,0,0,0,0],
